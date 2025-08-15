@@ -1,86 +1,174 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wine Shop</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Wine Shop</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-          </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Management System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#checkin">Check-In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#checkout">Check-Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cab">Cab Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#view">Outside View</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="bg-light py-5 text-center">
-      <div class="container">
-        <h1 class="display-4">Welcome to the Wine Shop</h1>
-        <p class="lead">Discover the finest wines from around the world</p>
-      </div>
-    </header>
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Check-In Section -->
+        <section id="checkin" class="mb-5">
+            <h2>Check-In</h2>
+            <form id="checkinForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="guestName" class="form-label">Guest Name</label>
+                            <input type="text" class="form-control" id="guestName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="roomNumber" class="form-label">Room Number</label>
+                            <input type="text" class="form-control" id="roomNumber" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="checkinDate" class="form-label">Check-In Date</label>
+                            <input type="date" class="form-control" id="checkinDate" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="checkoutDate" class="form-label">Check-Out Date</label>
+                            <input type="date" class="form-control" id="checkoutDate" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="idNumber" class="form-label">ID Number</label>
+                    <input type="text" class="form-control" id="idNumber" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Check-In Guest</button>
+            </form>
+            <div id="checkinResult" class="mt-3"></div>
+        </section>
 
-    <!-- Products Section -->
-    <section class="container my-5">
-      <h2 class="mb-4">Our Wines</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Red Wine" />
-            <div class="card-body">
-              <h5 class="card-title">Red Wine</h5>
-              <p class="card-text">A rich and full-bodied red wine with notes of cherry and oak.</p>
-              <p class="card-text fw-bold">$25.00</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1510626176961-4b1a3f4a7a1a?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="White Wine" />
-            <div class="card-body">
-              <h5 class="card-title">White Wine</h5>
-              <p class="card-text">A crisp and refreshing white wine with citrus and floral aromas.</p>
-              <p class="card-text fw-bold">$20.00</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Rosé Wine" />
-            <div class="card-body">
-              <h5 class="card-title">Rosé Wine</h5>
-              <p class="card-text">A light and fruity rosé with hints of strawberry and melon.</p>
-              <p class="card-text fw-bold">$22.00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Check-Out Section -->
+        <section id="checkout" class="mb-5">
+            <h2>Check-Out</h2>
+            <form id="checkoutForm">
+                <div class="mb-3">
+                    <label for="checkoutRoomNumber" class="form-label">Room Number</label>
+                    <input type="text" class="form-control" id="checkoutRoomNumber" required>
+                </div>
+                <div class="mb-3">
+                    <label for="additionalCharges" class="form-label">Additional Charges ($)</label>
+                    <input type="number" class="form-control" id="additionalCharges" value="0" min="0">
+                </div>
+                <button type="submit" class="btn btn-primary">Check-Out Guest</button>
+            </form>
+            <div id="checkoutResult" class="mt-3"></div>
+            <div id="billingInfo" class="mt-3"></div>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-      <div class="container">
-        <p class="mb-0">&copy; 2024 Wine Shop. All rights reserved.</p>
-      </div>
-    </footer>
+        <!-- Cab Services Section -->
+        <section id="cab" class="mb-5">
+            <h2>Cab Services</h2>
+            <form id="cabForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="cabName" class="form-label">Guest Name</label>
+                            <input type="text" class="form-control" id="cabName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="cabRoomNumber" class="form-label">Room Number</label>
+                            <input type="text" class="form-control" id="cabRoomNumber" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="pickupLocation" class="form-label">Pickup Location</label>
+                            <input type="text" class="form-control" id="pickupLocation" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="dropoffLocation" class="form-label">Drop-off Location</label>
+                            <input type="text" class="form-control" id="dropoffLocation" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="cabDateTime" class="form-label">Date & Time</label>
+                    <input type="datetime-local" class="form-control" id="cabDateTime" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Book Cab</button>
+            </form>
+            <div id="cabResult" class="mt-3"></div>
+        </section>
 
-    <!-- Bootstrap JS Bundle CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Outside View Section -->
+        <section id="view" class="mb-5">
+            <h2>Outside View</h2>
+            <div id="viewCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/hotel-exterior.jpg" class="d-block w-100" alt="Hotel Exterior">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/garden-view.jpg" class="d-block w-100" alt="Garden View">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pool-area.jpg" class="d-block w-100" alt="Pool Area">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#viewCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#viewCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
